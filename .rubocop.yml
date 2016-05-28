@@ -1,0 +1,21 @@
+AllCops:
+  TargetRubyVersion: 2.2
+
+  Exclude:
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+# We like to use the hash rocket in rake files.
+Style/HashSyntax:
+  Exclude:
+    - 'Rakefile'
+
+# We'll just use double quotes everywhere.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# We are not going to optimize by freezing strings.
+Style/MutableConstant:
+  Enabled: false

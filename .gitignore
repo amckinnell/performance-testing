@@ -1,0 +1,5 @@
+/.bundle/
+/bin/
+/coverage/
+
+/spec/examples.txt
