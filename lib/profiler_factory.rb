@@ -1,5 +1,6 @@
 require "results_directory"
 require "profiler/benchmark_profiler"
+require "profiler/memory_profiler_profiler"
 require "profiler/ruby_prof_profiler"
 
 #
@@ -10,6 +11,9 @@ module ProfilerFactory
     case profiler
     when :benchmark
       Profiler::BenchmarkProfiler.new(results_dir)
+
+    when :memory_profiler
+      Profiler::MemoryProfilerProfiler.new(results_dir)
 
     when :ruby_prof
       Profiler::RubyProfProfiler.new(results_dir)
