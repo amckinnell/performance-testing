@@ -12,4 +12,10 @@ RSpec.describe ProfilerFactory do
 
     expect(factory).to be_a_kind_of(Profiler::RubyProfProfiler)
   end
+
+  it "creates a benchmark profiler" do
+    factory = ProfilerFactory.create(profiler: :benchmark, results_dir: nil)
+
+    expect(factory).to be_a_kind_of(Profiler::BenchmarkProfiler)
+  end
 end
