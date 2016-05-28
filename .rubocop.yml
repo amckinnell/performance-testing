@@ -3,6 +3,7 @@ AllCops:
 
   Exclude:
     - 'bin/**/*'
+    - 'scripts/**/*'
 
 Metrics/LineLength:
   Max: 120
