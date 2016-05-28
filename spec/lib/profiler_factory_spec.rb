@@ -8,8 +8,8 @@ RSpec.describe ProfilerFactory do
   end
 
   it "creates a ruby-prof profiler" do
-    factory = ProfilerFactory.create(profiler: :ruby_profiler, results_dir: nil)
+    factory = ProfilerFactory.create(profiler: :ruby_prof, results_dir: nil)
 
-    expect(factory).to be_a_kind_of(Profiler::RubyProfiler)
+    expect(factory).to be_a_kind_of(Profiler::RubyProfProfiler)
   end
 end

@@ -10,7 +10,7 @@ def slow_task
   end
 end
 
-profiler_tag = :ruby_profiler
+profiler_tag = :ruby_prof
 
 results_dir = ResultsDirectory.new(results_dir: "../profile_results").create(tag: profiler_tag)
 profiler = ProfilerFactory.create(profiler: profiler_tag, results_dir: results_dir)

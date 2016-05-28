@@ -4,7 +4,7 @@ module Profiler
   #
   # Uses RubyProf to profile the supplied block.
   #
-  class RubyProfiler
+  class RubyProfProfiler
     def initialize(results_directory)
       @results_directory = results_directory
     end
