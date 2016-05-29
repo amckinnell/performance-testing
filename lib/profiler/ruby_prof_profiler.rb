@@ -16,6 +16,10 @@ module Profiler
 
       printer = RubyProf::MultiPrinter.new(result)
       printer.print(path: @results_directory, profile: "ruby_prof")
+
+      # Rename because qcachegrind is looking for callgrind.* as the filename.
+      File.rename(File.join(@results_directory, "ruby_prof.grind.dat"),
+        File.join(@results_directory, "callgrind.dat"))
     end
   end
 end
