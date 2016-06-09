@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib")
 
-require "profiler_factory"
+require "profile_tools/profiler_factory"
 
 sample_hash_to_split = {
   "a" => "1",
@@ -52,8 +52,8 @@ end
 
 profiler_tag = :memory_profiler
 
-results_dir = ResultsDirectory.new(results_dir: "../profile_results").create(tag: profiler_tag)
-profiler = ProfilerFactory.create(profiler: profiler_tag, results_dir: results_dir)
+results_dir = ProfileTools::ResultsDirectory.new(results_dir: "../profile_results").create(tag: profiler_tag)
+profiler = ProfileTools::ProfilerFactory.create(profiler: profiler_tag, results_dir: results_dir)
 
 profiler.profile do
   500.times.each { slow_task(sample_hash_to_split) }
